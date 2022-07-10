@@ -1,9 +1,11 @@
-sonuc = 0
-for sayi1 in range(9999, 100, -1):
-    for sayi2 in range(sayi1, 100, -1):
-        x = sayi1 * sayi2
-        if x > sonuc:
-            carpim = str(sayi1 * sayi2)
-            if carpim == carpim[::-1]:
-                sonuc = sayi1 * sayi2
-print(sonuc)
+def Palindrome(num):
+    return str(num) == str(num)[::-1]
+def buyuk(min, max):
+    a = 0
+    for x in range(max, min, -1):
+        for y in range(max,min, -1):
+            if Palindrome(x*y):
+                if x * y > a:
+                    a = x * y
+    return a
+print (buyuk(100,999))
